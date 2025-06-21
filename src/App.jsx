@@ -2,13 +2,16 @@ import { useState } from "react";
 import Header from "./components/Header/Header";
 import List from "./components/List/List";
 import data from "./data.json";
+import Button from "./components/UI/Button/Button";
 
 const App = () => {
 	const [list, setList] = useState(data);
 	const [filteredList, setFilteredList] = useState(list);
 
 	const handleDelete = (item) => {
-		setList((list) => list.filter((el) => el.name !== item.name));
+		const updatedList = list.filter((el) => el.name !== item.name);
+		setList(updatedList);
+		setFilteredList(updatedList);
 	};
 
 	const handleToggle = (item) => {
@@ -39,9 +42,9 @@ const App = () => {
 		<>
 			<Header />
 			<main>
-				<button type="button" onClick={filterAll}>All</button>
-				<button type="button" onClick={filterActive}>Active</button>
-				<button type="button" onClick={filterInactive}>Inactive</button>
+				<Button label="All" onClick={filterAll} />
+                <Button label="Active" onClick={filterActive} />
+                <Button label="Inactive" onClick={filterInactive} />
 				<List
 					list={filteredList}
 					onDelete={handleDelete}
