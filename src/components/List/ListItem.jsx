@@ -1,4 +1,5 @@
 import Button from "../UI/Button/Button";
+import Toggle from "../UI/Toggle/Toggle";
 
 const ListItem = ({ item, onDelete, onToggle }) => {
 	return (
@@ -6,21 +7,8 @@ const ListItem = ({ item, onDelete, onToggle }) => {
 			<img src={item.logo} alt="" />
 			<h2>{item.name}</h2>
 			<p>{item.description}</p>
-
-			{/* <button type="button" onClick={() => onDelete(item)}>
-				Remove
-			</button> */}
 			<Button label="Remove" onClick={() => onDelete(item)} />
-			<label htmlFor={item.name}>Toggle Extension</label>
-			<input
-				type="checkbox"
-				name={item.name}
-				id={item.name}
-				defaultChecked={item.isActive}
-				onChange={() => onToggle(item)}
-				aria-label={`Toggle Extension ${item.name}`}
-                aria-checked={item.isActive}
-			/>
+            <Toggle name={`${item.name}-extension`} isActive={item.isActive} onClick={(e) => onToggle(e, item)}/>
 		</li>
 	);
 };
