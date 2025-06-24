@@ -8,20 +8,6 @@ const App = () => {
 	const [list, setList] = useState(data);
 	const [filteredList, setFilteredList] = useState(list);
 
-	const handleDelete = (item) => {
-		const updatedList = list.filter((el) => el.name !== item.name);
-		setList(updatedList);
-		setFilteredList(updatedList);
-	};
-
-	const handleToggle = (item) => {
-		setList((list) =>
-			list.map((el) =>
-				el.name === item.name ? { ...el, isActive: !el.isActive } : el
-			)
-		);
-	};
-
 	const filterAll = () => {
 		const allExtensions = list;
 		setFilteredList(allExtensions);
@@ -37,14 +23,31 @@ const App = () => {
 		setFilteredList(inactiveExtensions);
 	};
 
-	console.log(list.map((el) => el.isActive));
+	const handleDelete = (item) => {
+		setList(list.filter((el) => el.name !== item.name));
+		setFilteredList(filteredList.filter((el) => el.name !== item.name));
+	};
+
+	const handleToggle = (e, item) => {
+		const button = e.target;
+		const pressed = button.getAttribute("aria-pressed") === "true";
+		button.setAttribute("aria-pressed", !pressed);
+
+		setList((list) =>
+			list.map((el) =>
+				el.name === item.name ? { ...el, isActive: !el.isActive } : el
+			)
+		);
+	};
+
+	// console.log(list.map((el) => el.isActive));
 	return (
 		<>
 			<Header />
 			<main>
 				<Button label="All" onClick={filterAll} />
-                <Button label="Active" onClick={filterActive} />
-                <Button label="Inactive" onClick={filterInactive} />
+				<Button label="Active" onClick={filterActive} />
+				<Button label="Inactive" onClick={filterInactive} />
 				<List
 					list={filteredList}
 					onDelete={handleDelete}
