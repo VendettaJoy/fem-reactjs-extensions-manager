@@ -3,6 +3,7 @@ import Header from "./components/Header/Header";
 import List from "./components/List/List";
 import data from "./data.json";
 import Button from "./components/UI/Button/Button";
+import ListNav from "./components/ListNav/ListNav";
 
 const App = () => {
 	const [list, setList] = useState(data);
@@ -45,9 +46,7 @@ const App = () => {
 		<>
 			<Header />
 			<main>
-				<Button label="All" onClick={filterAll} />
-				<Button label="Active" onClick={filterActive} />
-				<Button label="Inactive" onClick={filterInactive} />
+				<ListNav filterAll={filterAll} filterActive={filterActive} filterInactive={filterInactive} />
 				<List
 					list={filteredList}
 					onDelete={handleDelete}
