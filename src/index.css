@@ -36,6 +36,77 @@
 	--fw-r: 400;
 	--fw-m: 500;
 	--fw-b: 700;
+
+	--body-ff: var(--ff-sanserif);
+	--body-fs: var(--fs-default);
+	--body-fw: var(--fw-r);
+
+	/* Light Theme */
+	--body-background: var(--g-light);
+	--body-foreground: var(--c-neutral-900);
+
+	--header-background: var(--c-neutral-100);
+	--header-foreground: var(--c-neutral-900);
+
+	--theme-toggle-background: var(--c-neutral-300);
+	--theme-toggle-hover: var(--c-neutral-600);
+
+	--button-active-background: var(--c-red-700);
+	--button-active-foreground: var(--c-neutral-0);
+	--button-inactive-background: var(--c-neutral-100);
+	--button-inactive-foreground: var(--c-neutral-900);
+	--button-active-border: var(--c-red-700);
+	--button-inactive-border: var(--c-neutral-300);
+	--button-active-hover-background: var(--c-red-400);
+	--button-inactive-hover-background: var(--c-neutral-200);
+	--button-inactive-hover-foreground: var(--c-neutral-600);
+	--button-focus-outline: var(--c-red-700);
+
+	--card-background: var(--c-neutral-100);
+	--card-foreground: var(--c-neutral-700);
+	--card-border: var(--c-neutral-300);
+	--card-toggle-active-background: var(--c-red-700);
+	--card-toggle-inactive-background: var(--c-neutral-300);
+	--card-toggle-foreground: var(--c-neutral-100);
+	--card-toggle-hover-background: var(--c-red-400);
+}
+
+.dark-mode {
+	/* Dark Theme */
+	--body-background: var(--g-dark);
+	--body-foreground: var(--c-neutral-0);
+
+	--header-background: var(--c-neutral-800);
+	--header-foreground: var(--c-neutral-0);
+
+	--theme-toggle-background: var(--c-neutral-700);
+	--theme-toggle-hover: var(--c-neutral-600);
+
+	--button-active-background: var(--c-red-400);
+	--button-active-foreground: var(--c-neutral-800);
+	--button-inactive-background: var(--c-neutral-700);
+	--button-inactive-foreground: var(--c-neutral-0);
+	--button-active-border: var(--c-red-400);
+	--button-inactive-border: var(--c-neutral-600);
+	--button-active-hover-background: var(--c-red-700);
+	--button-inactive-hover-background: var(--c-neutral-600);
+	--button-inactive-hover-foreground: var(--c-neutral-100);
+	--button-focus-outline: var(--c-red-400);
+
+	--card-background: var(--c-neutral-800);
+	--card-foreground: var(--c-neutral-300);
+	--card-border: var(--c-neutral-600);
+	--card-toggle-active-background: var(--c-red-400);
+	--card-toggle-inactive-background: var(--c-neutral-600);
+	--card-toggle-hover-background: var(--c-red-700);
+}
+
+.color-theme-transition,
+.color-theme-transition *,
+.color-theme-transition *::before,
+.color-theme-transition *::after {
+	transition: all 750ms !important;
+	transition-delay: 0 !important;
 }
 
 @layer reset {
@@ -83,9 +154,11 @@
 
 @layer general-styles {
 	body {
-		font-family: var(--ff-sanserif);
-		font-size: var(--fs-default);
-		font-weight: var(--fw-r);
+		font-family: var(--body-ff);
+		font-size: var(--body-fs);
+		font-weight: var(--body-fw);
+		background: var(--body-background);
+		color: var(--body-foreground);
 	}
 }
 

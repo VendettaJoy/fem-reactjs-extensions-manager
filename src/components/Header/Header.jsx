@@ -1,14 +1,11 @@
 import Logo from "./Logo"
-import Moon from "../../assets/images/icon-moon.svg"
-import Sun from "../../assets/images/icon-sun.svg"
+import DarkModeToggle from "../DarkMode/DarkModeToggle"
 
 const Header = () => {
   return (
     <header>
         <Logo />
-        <button type="button">
-            <img src={Moon} alt="" />
-        </button>
+        <DarkModeToggle />
     </header>
   )
 }
