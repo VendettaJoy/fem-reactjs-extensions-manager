@@ -1,13 +1,15 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { ThemeCtx } from "./context/ThemeContext";
 import Header from "./components/Header/Header";
 import List from "./components/List/List";
 import data from "./data.json";
-import Button from "./components/UI/Button/Button";
 import ListNav from "./components/ListNav/ListNav";
 
 const App = () => {
 	const [list, setList] = useState(data);
 	const [filteredList, setFilteredList] = useState(list);
+
+	const { theme } = useContext(ThemeCtx);
 
 	const filterAll = () => {
 		const allExtensions = list;
@@ -41,19 +43,22 @@ const App = () => {
 		);
 	};
 
-	// console.log(list.map((el) => el.isActive));
 	return (
-		<>
+		<div className="App" data-theme={theme}>
 			<Header />
 			<main>
-				<ListNav filterAll={filterAll} filterActive={filterActive} filterInactive={filterInactive} />
+				<ListNav
+					filterAll={filterAll}
+					filterActive={filterActive}
+					filterInactive={filterInactive}
+				/>
 				<List
 					list={filteredList}
 					onDelete={handleDelete}
 					onToggle={handleToggle}
 				/>
 			</main>
-		</>
+		</div>
 	);
 };
 export default App;

@@ -41,8 +41,7 @@
 	--body-fs: var(--fs-default);
 	--body-fw: var(--fw-r);
 
-	/* Light Theme */
-	--body-background: var(--g-light);
+	--body-background: var(--g-light, #ebf2fc);
 	--body-foreground: var(--c-neutral-900);
 
 	--header-background: var(--c-neutral-100);
@@ -71,9 +70,8 @@
 	--card-toggle-hover-background: var(--c-red-400);
 }
 
-.dark-mode {
-	/* Dark Theme */
-	--body-background: var(--g-dark);
+[data-theme="dark"] {
+	--body-background: var(--g-dark, #040918);
 	--body-foreground: var(--c-neutral-0);
 
 	--header-background: var(--c-neutral-800);
@@ -153,7 +151,9 @@
 }
 
 @layer general-styles {
-	body {
+	.App {
+		height: 100%;
+		width: 100%;
 		font-family: var(--body-ff);
 		font-size: var(--body-fs);
 		font-weight: var(--body-fw);
