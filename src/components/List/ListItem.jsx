@@ -11,9 +11,9 @@ const ListItem = ({ item, onDelete, onToggle }) => {
 				<p>{item.description}</p>
 				<Button label="Remove" onClick={() => onDelete(item)} />
 				<Toggle
-					name={`${item.name}-extension`}
 					isActive={item.isActive}
 					onClick={(e) => onToggle(e, item)}
+					ariaLabel={`Toggle ${item.name} Extension`}
 				/>
 			</li>
 		</Card>
