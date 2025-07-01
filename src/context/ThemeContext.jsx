@@ -10,7 +10,11 @@ const ThemeProvider = ({ children }) => {
 		: "light";
 	const [theme, setTheme] = useLocalStorage("theme", preferredTheme);
 
-	const toggleTheme = () => {
+	const toggleTheme = (e) => {
+        const themeToggle = e.target;
+        const pressed = themeToggle.getAttribute("aria-pressed") === "true";
+        themeToggle.setAttribute("aria-pressed", !pressed);
+
 		// smooth transition
 		document.documentElement.classList.add("color-theme-transition");
 		window.setTimeout(() => {
