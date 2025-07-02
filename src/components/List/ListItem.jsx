@@ -3,26 +3,24 @@ import Card from "../UI/Card/Card";
 import Toggle from "../UI/Toggle/Toggle";
 
 const ListItem = ({ item, onDelete, onToggle }) => {
-	const label = (
-		<>
-			Remove <span className="sr-only">{item.name} Extension</span>
-		</>
-	);
-
 	return (
-		<Card>
-			<li>
+		<li>
+			<Card>
 				<img src={item.logo} alt="" />
 				<h2>{item.name}</h2>
 				<p>{item.description}</p>
-				<Button label={label} onClick={() => onDelete(item)} />
+				<Button
+					label="Remove"
+					onClick={() => onDelete(item)}
+					ariaLabel={`Remove ${item.name} Extension`}
+				/>
 				<Toggle
 					isActive={item.isActive}
 					onClick={(e) => onToggle(e, item)}
 					ariaLabel={`Toggle ${item.name} Extension`}
 				/>
-			</li>
-		</Card>
+			</Card>
+		</li>
 	);
 };
 export default ListItem;
