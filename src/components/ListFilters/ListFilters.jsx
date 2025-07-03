@@ -1,4 +1,5 @@
 import Button from "../UI/Button/Button";
+import classes from "./listFilters.module.css"
 
 const ListFilters = ({
 	activeIndex,
@@ -25,21 +26,21 @@ const ListFilters = ({
 	];
 
 	return (
-		<div>
-			<h1>Extensions List</h1>
-			<ul aria-label="Extensions List Filters">
-				{filters.map((filter, index) => (
-					<li key={index}>
-						<Button
-							index={index}
-							activeIndex={activeIndex}
-							label={filter.label}
-							onClick={() => filter.filterFunc(index)}
-							ariaLabel={filter.ariaLabel}
-						/>
-					</li>
-				))}
-			</ul>
+		<div className={classes.wrapper}>
+			<h1 className={classes.heading}>Extensions List</h1>
+			<div className={classes.filters}>
+                {filters.map((filter, index) => (
+                    <>
+                        <Button
+                            index={index}
+                            activeIndex={activeIndex}
+                            label={filter.label}
+                            onClick={() => filter.filterFunc(index)}
+                            ariaLabel={filter.ariaLabel}
+                        />
+                    </>
+                ))}
+            </div>
 		</div>
 	);
 };

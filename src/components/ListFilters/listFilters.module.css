@@ -1,0 +1,22 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding-block: 2rem;
+}
+
+.heading {
+    font-weight: var(--fw-b);
+    font-size: 2rem;
+}
+
+.filters {
+    display: flex;
+    gap: 1rem;
+
+    button {
+        font-size: 1.125rem;
+    }
+}
