@@ -4,12 +4,12 @@
     align-items: center;
     justify-content: center;
     gap: 1rem;
-    padding-block: 2rem;
+    padding-block: 2.25rem;
 }
 
 .heading {
     font-weight: var(--fw-b);
-    font-size: 2rem;
+    font-size: 2.25rem;
 }
 
 .filters {
@@ -17,6 +17,6 @@
     gap: 1rem;
 
     button {
-        font-size: 1.125rem;
+        font-size: 1.275rem;
     }
 }
