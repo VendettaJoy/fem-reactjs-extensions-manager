@@ -3,5 +3,6 @@
 	color: var(--card-foreground);
 	border: var(--card-border);
     border-radius: 1.5rem;
+    min-height: 13.5rem;
     padding: 1.25rem;
 }
