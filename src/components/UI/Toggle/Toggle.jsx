@@ -5,12 +5,11 @@ const Toggle = ({ isActive, onClick, ariaLabel }) => {
 		<>
 			<button
 				type="button"
-				className={classes.button}
+				className={classes.toggle}
 				onClick={onClick}
 				aria-label={ariaLabel}
 				aria-pressed={isActive}
 			>
-                <span className={classes.toggle} aria-hidden="true"></span>
             </button>
 		</>
 	);
