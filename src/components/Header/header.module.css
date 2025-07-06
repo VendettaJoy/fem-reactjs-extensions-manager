@@ -11,10 +11,15 @@
     cursor: pointer;
     border: none;
     background-color: var(--theme-toggle-background);
+    border: 2px solid var(--theme-toggle-background);
     padding: 0.85rem;
     border-radius: 0.75rem;
 }
 
 .themeToggle:hover {
     background-color: var(--theme-toggle-hover);
+}
+
+.themeToggle:focus {
+    border-color: var(--header-background)
 }

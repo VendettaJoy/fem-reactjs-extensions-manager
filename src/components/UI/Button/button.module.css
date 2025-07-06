@@ -12,17 +12,21 @@
     color: var(--button-hover-foreground);
 }
 
-.button.active {
+.button:focus {
+    border-color: var(--button-focus-border);
+}
+
+.button.active {    
     background-color: var(--button-active-background);
+    border-color: var(--button-active-background);
     color: var(--button-active-foreground);
-    border: var(--button-active-border);
 }
 
 .button.active:hover {
     background-color: var(--button-active-hover-background);
-    border: var(--button-active-hover-border);
+    border-color: var(--button-active-hover-background);
 }
 
-.button.active:focus {
-    border: 2px solid var(--button-active-foreground);
+.button.active:focus {  
+    border-color: var(--body-background); 
 }
