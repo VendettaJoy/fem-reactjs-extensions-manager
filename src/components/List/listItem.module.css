@@ -25,8 +25,15 @@
     align-items: center;
 }
 
-.buttons > button {
+.buttons > button:first-of-type {
     font-weight: var(--fw-m);
-    border-color: var(--c-neutral-300);
     padding-inline: 1rem;
+    background-color: var(--button-remove-background);
+    border-color: var(--button-remove-border);
+}
+
+.buttons > button:first-of-type:hover {
+    background-color: var(--button-remove-hover-background);
+    border-color: var(--button-remove-hover-background);
+    color: var(--button-remove-hover-foreground);
 }
