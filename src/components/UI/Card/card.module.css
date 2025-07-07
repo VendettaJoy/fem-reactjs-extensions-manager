@@ -5,4 +5,12 @@
     border-radius: 1.5rem;
     min-height: 13.5rem;
     padding: 1.25rem;
+    
+    @media (width > 700px) {
+        max-width: 20rem;
+    }
+
+    @media (width > 860px) {
+        max-width: 25.5rem;
+    }
 }

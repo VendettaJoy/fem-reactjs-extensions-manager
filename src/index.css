@@ -44,59 +44,75 @@
 	--body-background: var(--g-light, #ebf2fc);
 	--body-foreground: var(--c-neutral-900);
 
-	--header-background: var(--c-neutral-100);
+	--header-logo: var(--c-red-500);
+	--header-background: var(--c-neutral-0);
 	--header-foreground: var(--c-neutral-900);
 
-	--theme-toggle-background: var(--c-neutral-300);
-	--theme-toggle-hover: var(--c-neutral-600);
+	--theme-toggle-background: var(--c-neutral-100);
+	--theme-toggle-hover: var(--c-neutral-300);
 
-	--button-active-background: var(--c-red-700);
+	--button-background: var(--c-neutral-0);
+	--button-foreground: var(--c-neutral-800);
+	--button-border: 2px solid var(--c-neutral-200);
+	--button-hover-background: var(--c-neutral-200);
+	--button-hover-foreground: var(--c-neutral-600);
+    --button-focus-border: var(--c-neutral-100);
+
+	--button-active-background: var(--c-red-500);
 	--button-active-foreground: var(--c-neutral-0);
-	--button-inactive-background: var(--c-neutral-100);
-	--button-inactive-foreground: var(--c-neutral-900);
-	--button-active-border: var(--c-red-700);
-	--button-inactive-border: var(--c-neutral-300);
 	--button-active-hover-background: var(--c-red-400);
-	--button-inactive-hover-background: var(--c-neutral-200);
-	--button-inactive-hover-foreground: var(--c-neutral-600);
-	--button-focus-outline: var(--c-red-700);
 
-	--card-background: var(--c-neutral-100);
+	--button-remove-background: var(--c-neutral-0);
+	--button-remove-border: var(--c-neutral-300);
+	--button-remove-hover-background: var(--c-red-500);
+	--button-remove-hover-foreground: var(--c-neutral-0);
+
+	--card-background: var(--c-neutral-0);
 	--card-foreground: var(--c-neutral-700);
-	--card-border: var(--c-neutral-300);
-	--card-toggle-active-background: var(--c-red-700);
+	--card-border: 2px solid var(--c-neutral-200);
+
+	--card-toggle-active-background: var(--c-red-500);
 	--card-toggle-inactive-background: var(--c-neutral-300);
-	--card-toggle-foreground: var(--c-neutral-100);
+	--card-toggle-foreground: var(--c-neutral-0);
 	--card-toggle-hover-background: var(--c-red-400);
+
+    --focus-outline: 2px solid var(--c-red-400);
 }
 
 [data-theme="dark"] {
 	--body-background: var(--g-dark, #040918);
 	--body-foreground: var(--c-neutral-0);
 
+	--header-logo: var(--c-red-400);
 	--header-background: var(--c-neutral-800);
 	--header-foreground: var(--c-neutral-0);
 
 	--theme-toggle-background: var(--c-neutral-700);
 	--theme-toggle-hover: var(--c-neutral-600);
 
+	--button-background: var(--c-neutral-700);
+	--button-foreground: var(--c-neutral-0);
+	--button-border: 2px solid var(--c-neutral-600);
+	--button-hover-background: var(--c-neutral-600);
+	--button-hover-foreground: var(--c-neutral-100);
+    --button-focus-border: var(--c-neutral-900);
+
 	--button-active-background: var(--c-red-400);
 	--button-active-foreground: var(--c-neutral-800);
-	--button-inactive-background: var(--c-neutral-700);
-	--button-inactive-foreground: var(--c-neutral-0);
-	--button-active-border: var(--c-red-400);
-	--button-inactive-border: var(--c-neutral-600);
-	--button-active-hover-background: var(--c-red-700);
-	--button-inactive-hover-background: var(--c-neutral-600);
-	--button-inactive-hover-foreground: var(--c-neutral-100);
-	--button-focus-outline: var(--c-red-400);
+    --button-active-hover-background: var(--c-red-500);
+
+	--button-remove-background: var(--c-neutral-800);
+	--button-remove-border: var(--c-neutral-600);
+	--button-remove-hover-background: var(--c-red-400);
+	--button-remove-hover-foreground: var(--c-neutral-800);
 
 	--card-background: var(--c-neutral-800);
 	--card-foreground: var(--c-neutral-300);
-	--card-border: var(--c-neutral-600);
+	--card-border: 2px solid var(--c-neutral-700);
+
 	--card-toggle-active-background: var(--c-red-400);
 	--card-toggle-inactive-background: var(--c-neutral-600);
-	--card-toggle-hover-background: var(--c-red-700);
+	--card-toggle-hover-background: var(--c-red-500);
 }
 
 .color-theme-transition,
@@ -147,29 +163,5 @@
 	h5,
 	h6 {
 		overflow-wrap: break-word;
-	}
-}
-
-@layer general-styles {
-	.App {
-		height: 100%;
-		width: 100%;
-		font-family: var(--body-ff);
-		font-size: var(--body-fs);
-		font-weight: var(--body-fw);
-		background: var(--body-background);
-		color: var(--body-foreground);
-	}
-}
-
-@layer utility-classes {
-	.sr-only:not(:focus):not(:active) {
-		clip: rect(0 0 0 0);
-		clip-path: inset(50%);
-		height: 1px;
-		overflow: hidden;
-		position: absolute;
-		white-space: nowrap;
-		width: 1px;
 	}
 }

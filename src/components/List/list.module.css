@@ -1,5 +1,16 @@
 .list {
-    display: flex;
-    flex-direction: column;
+    display: grid;
     gap: 0.75rem;
+
+    @media (width > 700px) {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    @media (width > 1279px) {
+        grid-template-columns: repeat(3,1fr);
+    }
+
+    @media (width > 1699px) {
+        grid-template-columns: repeat(4,1fr);
+    }
 }
