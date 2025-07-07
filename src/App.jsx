@@ -4,41 +4,41 @@ import Header from "./components/Header/Header";
 import ListFilters from "./components/ListFilters/ListFilters";
 import List from "./components/List/List";
 import data from "./data.json";
-import "./App.css"
+import "./App.css";
 
 const App = () => {
-    const [activeIndex, setActiveIndex] = useState(0);
+	const [activeIndex, setActiveIndex] = useState(0);
 
 	const [list, setList] = useState(data);
 	const [filteredList, setFilteredList] = useState(list);
 
 	const { theme } = useContext(ThemeCtx);
 
-    const handleButtonState = (index) => {
-        setActiveIndex(activeIndex === index ? null : index);
-    }
+	const handleButtonState = (index) => {
+		setActiveIndex(index);
+	};
 
 	const filterAll = (index) => {
-        handleButtonState(index);
+		handleButtonState(index);
 
 		const allExtensions = list.slice();
 		setFilteredList(allExtensions);
 	};
 
 	const filterActive = (index) => {
-        handleButtonState(index);
+		handleButtonState(index);
 
 		const activeExtensions = list.filter((el) => el.isActive === true);
 		setFilteredList(activeExtensions);
 	};
 
 	const filterInactive = (index) => {
-        handleButtonState(index);
+		handleButtonState(index);
 
 		const inactiveExtensions = list.filter((el) => el.isActive !== true);
 		setFilteredList(inactiveExtensions);
 	};
-    
+
 	const handleDelete = (item) => {
 		setList(list.filter((el) => el.name !== item.name));
 		setFilteredList(filteredList.filter((el) => el.name !== item.name));
@@ -58,20 +58,22 @@ const App = () => {
 
 	return (
 		<div className="App" data-theme={theme}>
-			<Header />
-			<main>
-				<ListFilters
-                    activeIndex={activeIndex}
-					filterAll={filterAll}
-					filterActive={filterActive}
-					filterInactive={filterInactive}
-				/>
-				<List
-					list={filteredList}
-					onDelete={handleDelete}
-					onToggle={handleToggle}
-				/>
-			</main>
+			<div className="wrapper">
+				<Header />
+				<main>
+					<ListFilters
+						activeIndex={activeIndex}
+						filterAll={filterAll}
+						filterActive={filterActive}
+						filterInactive={filterInactive}
+					/>
+					<List
+						list={filteredList}
+						onDelete={handleDelete}
+						onToggle={handleToggle}
+					/>
+				</main>
+			</div>
 		</div>
 	);
 };
