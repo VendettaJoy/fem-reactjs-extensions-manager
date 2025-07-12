@@ -34,8 +34,8 @@ Users should be able to:
 
 ### Links
 
--   Solution URL: [Add solution URL here](https://your-solution-url.com)
--   Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+-   [Solution](https://www.frontendmentor.io/solutions/responsive-and-sr-friendly-browser-extensions-manager-ui-using-reactjs-krv5bLZx_R)
+-   [Live Site](https://gleeful-faloodeh-de6e93.netlify.app/)
 
 ## My process
 
