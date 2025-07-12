@@ -128,7 +128,7 @@
 	}
 }
 
-reset {
+@layer reset {
 	*,
 	*::before,
 	*::after {
