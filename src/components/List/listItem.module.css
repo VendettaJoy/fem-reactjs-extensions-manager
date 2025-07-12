@@ -15,6 +15,7 @@
 }
 
 .info h2 {
+    color: var(--card-heading-foreground);
     font-size: 1.25rem;
     font-weight: var(--fw-b);
 }

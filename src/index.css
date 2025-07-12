@@ -70,6 +70,7 @@
 	--card-background: var(--c-neutral-0);
 	--card-foreground: var(--c-neutral-700);
 	--card-border: 2px solid var(--c-neutral-200);
+    --card-heading-foreground: var(--c-neutral-700);
 
 	--card-toggle-active-background: var(--c-red-500);
 	--card-toggle-inactive-background: var(--c-neutral-300);
@@ -109,6 +110,7 @@
 	--card-background: var(--c-neutral-800);
 	--card-foreground: var(--c-neutral-300);
 	--card-border: 2px solid var(--c-neutral-700);
+    --card-heading-foreground: var(--c-neutral-0);
 
 	--card-toggle-active-background: var(--c-red-400);
 	--card-toggle-inactive-background: var(--c-neutral-600);
