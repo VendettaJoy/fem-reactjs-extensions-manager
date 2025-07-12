@@ -23,7 +23,6 @@
 	--c-neutral-100: hsl(0, 0%, 93%);
 	--c-neutral-0: hsl(200, 60%, 99%);
 
-	--c-red-700: hsl(3, 77%, 44%);
 	--c-red-500: hsl(3, 71%, 56%);
 	--c-red-400: hsl(3, 86%, 64%);
 
@@ -56,7 +55,7 @@
 	--button-border: 2px solid var(--c-neutral-200);
 	--button-hover-background: var(--c-neutral-200);
 	--button-hover-foreground: var(--c-neutral-600);
-    --button-focus-border: var(--c-neutral-100);
+	--button-focus-border: var(--c-neutral-100);
 
 	--button-active-background: var(--c-red-500);
 	--button-active-foreground: var(--c-neutral-0);
@@ -70,14 +69,14 @@
 	--card-background: var(--c-neutral-0);
 	--card-foreground: var(--c-neutral-700);
 	--card-border: 2px solid var(--c-neutral-200);
-    --card-heading-foreground: var(--c-neutral-700);
+	--card-heading-foreground: var(--c-neutral-700);
 
 	--card-toggle-active-background: var(--c-red-500);
 	--card-toggle-inactive-background: var(--c-neutral-300);
 	--card-toggle-foreground: var(--c-neutral-0);
 	--card-toggle-hover-background: var(--c-red-400);
 
-    --focus-outline: 2px solid var(--c-red-400);
+	--focus-outline: 2px solid var(--c-red-400);
 }
 
 [data-theme="dark"] {
@@ -96,11 +95,11 @@
 	--button-border: 2px solid var(--c-neutral-600);
 	--button-hover-background: var(--c-neutral-600);
 	--button-hover-foreground: var(--c-neutral-100);
-    --button-focus-border: var(--c-neutral-900);
+	--button-focus-border: var(--c-neutral-900);
 
 	--button-active-background: var(--c-red-400);
 	--button-active-foreground: var(--c-neutral-800);
-    --button-active-hover-background: var(--c-red-500);
+	--button-active-hover-background: var(--c-red-500);
 
 	--button-remove-background: var(--c-neutral-800);
 	--button-remove-border: var(--c-neutral-600);
@@ -110,7 +109,7 @@
 	--card-background: var(--c-neutral-800);
 	--card-foreground: var(--c-neutral-300);
 	--card-border: 2px solid var(--c-neutral-700);
-    --card-heading-foreground: var(--c-neutral-0);
+	--card-heading-foreground: var(--c-neutral-0);
 
 	--card-toggle-active-background: var(--c-red-400);
 	--card-toggle-inactive-background: var(--c-neutral-600);
@@ -124,12 +123,12 @@
 	transition: all 750ms;
 	transition-delay: 0;
 
-    @media (prefers-reduced-motion: reduce) {
-        transition-duration: 0ms;
-    }
+	@media (prefers-reduced-motion: reduce) {
+		transition-duration: 0ms;
+	}
 }
 
-@layer reset {
+reset {
 	*,
 	*::before,
 	*::after {
