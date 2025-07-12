@@ -49,8 +49,8 @@ const App = () => {
 		const pressed = button.getAttribute("aria-pressed") === "true";
 		button.setAttribute("aria-pressed", !pressed);
 
-		setList((list) =>
-			list.map((el) =>
+		setList((prevList) =>
+			prevList.map((el) =>
 				el.name === item.name ? { ...el, isActive: !el.isActive } : el
 			)
 		);
